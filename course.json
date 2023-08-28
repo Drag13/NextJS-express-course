@@ -2,9 +2,12 @@
   "title": "NextJS для початківців - експрес курс",
   "lessons": [
     {
-      "name": "about",
-      "title": "About the course",
-      "published": true
+      "name": "nextjs-course-intro",
+      "title": "Вступ до курсу NextJS"
+    },
+    {
+      "name": "nextjs-intro",
+      "title": "Про Next.JS"
     }
   ]
 }
