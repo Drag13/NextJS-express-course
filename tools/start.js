@@ -1,8 +1,11 @@
 const { exec } = require('child_process');
 const { join } = require('path');
 const { cwd } = require('process');
+const { ensureExists } = require('./fs');
+
 const course = require('../course.json');
 const PORT = process.env.PORT ?? '1234';
+const NAME_SPACE = 'nextjs-';
 
 (function cli(params) {
   const [lessonNumber] = params;
@@ -12,21 +15,15 @@ const PORT = process.env.PORT ?? '1234';
     return logAvailableLessonNames(course.lessons);
   }
 
-  const lesson =
-    course.lessons[+lessonNumber] ?? course.lessons.find((x) => x.name === lessonNumber);
+  const sub = `${NAME_SPACE}${lessonNumber}`;
+  const path = join(cwd(), 'lessons', sub, 'index.html');
 
-  if (!lesson) {
-    console.log('\x1b[33m%s\x1b[0m', `Lesson "${lessonNumber}" doesn't exist, aborting`);
-    return logAvailableLessonNames(course.lessons);
-  }
-
-  const sub = lesson.name;
+  ensureExists(path);
 
   console.log(`Starting ${sub} presentation`);
-
-  const path = join(cwd(), 'lessons', sub, 'index.html');
   console.log(`Starting developer server on http://localhost:${PORT}`);
   console.log('PATH: ', path);
+
   exec(`npx parcel ${path}`);
 
   /**
