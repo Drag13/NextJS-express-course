@@ -1,0 +1,10 @@
+{
+  "title": "NextJS для початківців - експрес курс",
+  "lessons": [
+    {
+      "name": "about",
+      "title": "About the course",
+      "published": true
+    }
+  ]
+}
