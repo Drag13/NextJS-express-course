@@ -3,11 +3,24 @@
   "lessons": [
     {
       "name": "nextjs-course-intro",
-      "title": "Вступ до курсу NextJS"
+      "title": "Вступ до курсу NextJS",
+      "points": ["Для кого цей курс", "Структура відео та Проект", "Програма курсу"]
     },
+
     {
       "name": "nextjs-intro",
-      "title": "Про Next.JS"
+      "title": "Про Next.JS",
+      "hidden": true
+    },
+    {
+      "name": "nextjs-components",
+      "title": "Компоненти в Next.JS",
+      "points": ["Види компонентів в Next.JS", "Призначення та обмеження серверних компонентів"]
+    },
+    {
+      "name": "nexths-deploy-azure",
+      "title": "Деплоїмо Next.JS в Azure",
+      "points": ["Пререквізити", "Налаштування Azure", "Налаштування проекту"]
     }
   ]
 }

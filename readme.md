@@ -1,3 +1,10 @@
+![https://raw.githubusercontent.com/Drag13/drag13.github.io/development/swu.PNG](https://raw.githubusercontent.com/Drag13/drag13.github.io/development/swu.PNG)
+
+
+DISCLAIMER: All requests to "remove politics" will be removed completely without any comments. If you have another opinion - just skip this course.
+
+
+
 # Експресс курс по Next.JS v 13.4+
 
 # Програма (!!!Subject to change)
