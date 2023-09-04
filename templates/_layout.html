@@ -42,6 +42,17 @@
           </h4>
         </section>
 
+        {{#points.length}}
+        <section>
+          <h2>Key Points</h2>
+          <ul>
+            {{#points}}
+            <li class="fragment fade-up">{{{.}}}</li>
+            {{/points}}
+          </ul>
+        </section>
+        {{/points.length}}
+
         <include src="./{{name}}/body.html"></include>
 
         <section>
