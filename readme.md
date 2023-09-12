@@ -1,9 +1,6 @@
 ![https://raw.githubusercontent.com/Drag13/drag13.github.io/development/swu.PNG](https://raw.githubusercontent.com/Drag13/drag13.github.io/development/swu.PNG)
 
-
 DISCLAIMER: All requests to "remove politics" will be removed completely without any comments. If you have another opinion - just skip this course.
-
-
 
 # Експресс курс по Next.JS v 13.4+
 
@@ -27,15 +24,23 @@ DISCLAIMER: All requests to "remove politics" will be removed completely without
 - Додаємо перший компонент - статтю
 - Додаємо компонент клієнтський компонент - лайк
 
+## Cтилізація
+
+- Звичайний CSS та CSS модулі
+- Опції - scss, less, tailwind
+- Проблеми з css in js
+- Стилізуємо лайк компонент
+
 ## Метадата
 
 - Статична метадата
 - Правила мерджу метадати
 - Додаємо тайтл до нашої сторінки
 
-## Роутінг
+## Клієнтський Роутінг
 
 - Клієнтський роутінг - сторінка, парамс, групування
+- Layout та вкладені роути
 - Додаємо сторінку про автора
 - Додаємо сторінку для статті з парамс
 
@@ -43,11 +48,9 @@ DISCLAIMER: All requests to "remove politics" will be removed completely without
 
 - Додаємо 404 сторінку якщо стаття не знайдена
 
-## Cтилізація
+## Markdown
 
-- Звичайний CSS працює з коробки
-- CSS модулі працюють з коробки
-- Опції - scss, less, tailwind
+- Додаємо markdown статті
 
 ## Серверний код
 
