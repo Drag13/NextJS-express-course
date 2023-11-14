@@ -21,7 +21,7 @@
       "title": "Стилізація в Next.JS",
       "points": [
         "Звичайний CSS та CSS модулі",
-        "Опції - scss, less, tailwind",
+        "Опції - scss, tailwind, Css in JS",
         "Проблеми з css in js"
       ]
     },
