@@ -6,11 +6,10 @@
       "title": "Вступ до курсу NextJS",
       "points": ["Для кого цей курс", "Структура відео та Проект", "Програма курсу"]
     },
-
     {
-      "name": "nextjs-intro",
+      "name": "nextjs-start",
       "title": "Про Next.JS",
-      "hidden": true
+      "points": ["Що таке Next.JS", "Можливості Next.JS", "Відмінність Next.JS та React"]
     },
     {
       "name": "nextjs-components",

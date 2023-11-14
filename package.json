@@ -8,6 +8,7 @@
     "start": "node ./tools/start",
     "build": "parcel build ./lessons/**/index.html --public-url https://drag13.io/react-learning-course-short",
     "readme": "node tools/docs.js",
+    "parcel": "parcel",
     "scaffold": "node tools/scaffold.js",
     "encode": "node tools/encode.js",
     "prepare": "husky install"
