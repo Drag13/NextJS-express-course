@@ -80,4 +80,5 @@ DISCLAIMER: All requests to "remove politics" will be removed completely without
 - Підключення додаткових скриптів
 - Робота з DOM (document, window)
 - State management
+- Middleware
 - ...

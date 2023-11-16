@@ -4,19 +4,39 @@
     {
       "name": "nextjs-course-intro",
       "title": "Вступ до курсу NextJS",
-      "points": ["Для кого цей курс", "Структура відео та Проект", "Програма курсу"]
+      "points": ["Для кого цей курс", "Структура курсу та проект", "Програма курсу"]
     },
-
     {
-      "name": "nextjs-intro",
+      "name": "nextjs-start",
       "title": "Про Next.JS",
-      "hidden": true
+      "points": ["Що таке Next.JS", "Можливості Next.JS", "Відмінність Next.JS та React"]
     },
     {
       "name": "nextjs-components",
       "title": "Компоненти в Next.JS",
       "points": ["Види компонентів в Next.JS", "Призначення та обмеження серверних компонентів"]
     },
+    {
+      "name": "nextjs-styling",
+      "title": "Стилізація в Next.JS",
+      "points": [
+        "Звичайний CSS та CSS модулі",
+        "Опції - scss, tailwind, Css in JS",
+        "Проблеми з css in js"
+      ]
+    },
+
+    {
+      "name": "nextjs-client-routing",
+      "title": "Клієнтський Роутінг в Next.JS",
+      "points": [
+        "сторінка, парамс, групування",
+        "Layout та вкладені роути",
+        "Додаємо сторінку про автора",
+        "Додаємо сторінку для статті з парамс"
+      ]
+    },
+
     {
       "name": "nexths-deploy-azure",
       "title": "Деплоїмо Next.JS в Azure",
