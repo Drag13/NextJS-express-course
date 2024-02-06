@@ -10,8 +10,17 @@
 
   <section>
     <h3>React-router-dom</h3>
-    <pre><code>
-    </code></pre>
+    <pre><code class="language-tsx" data-line-numbers>export const browserRouter = createBrowserRouter([
+  {
+    element: &lt;AppLayout /&gt;,
+    children: [
+      {
+        index: true,
+        element: &lt;HomePage /&gt;,
+      },
+    ],
+  },
+]);</code></pre>
   </section>
 
   <section>
@@ -33,11 +42,12 @@
   </section>
 
   <section>
-    <p>У файлі page створити react компонент і зробити дефолтний експорт.</p>
+    <p>У файлі page створити react компонент і зробити дефолтний експорт</p>
   </section>
 
   <section>
-    <p>Динамічний роутинг: id = [id]</p>
+    <h3>Динамічний роутинг</h3>
+    <p>course/[pageId]/page.tsx</p>
   </section>
 </section>
 
@@ -71,8 +81,6 @@
   </section>
 
   <section>
-    <p>
-      Error.tsx
-    </p>
+    <p>Error.tsx - буде показаний у випадку, якщо під час генерації сторінки з'явиться помилка</p>
   </section>
 </section>
