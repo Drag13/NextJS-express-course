@@ -30,7 +30,7 @@
       "name": "nextjs-client-routing",
       "title": "Клієнтський Роутінг в Next.JS",
       "points": [
-        "Принципи побудови routing в Next.J",
+        "Принципи побудови routing в Next.JS",
         "Як додавати нові сторінки",
         "Як додавати layout а також робити вкладені роути",
         "Навіщо потрібні файли loading.tsx та error.tsx"
