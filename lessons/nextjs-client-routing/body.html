@@ -1,24 +1,78 @@
-
 <section>
   <section>
-    <h2>сторінка, парамс, групування</h2>
+    <h2>Принципи побудови routing в Next.JS</h2>
+  </section>
+
+  <section>
+    <h3>Роутинг в звичайному React-Router-Dom</h3>
+    <p>Засновний на вашому коді</p>
+  </section>
+
+  <section>
+    <h3>React-router-dom</h3>
+    <pre><code>
+    </code></pre>
+  </section>
+
+  <section>
+    <h3>Роутинг в Next.JS</h3>
+    <p>Засновний на структурі вашого проекту</p>
   </section>
 </section>
 
 <section>
   <section>
-    <h2>Layout та вкладені роути</h2>
+    <h2>Як додавати нові сторінки</h2>
+  </section>
+
+  <section>
+    <p>Створити теку, яка має називатися так як ви хочете щоб називався ваш роут</p>
+  </section>
+  <section>
+    <p>У створену теку покласти файл page.tsx | page.jsx</p>
+  </section>
+
+  <section>
+    <p>У файлі page створити react компонент і зробити дефолтний експорт.</p>
+  </section>
+
+  <section>
+    <p>Динамічний роутинг: id = [id]</p>
   </section>
 </section>
 
 <section>
   <section>
-    <h2>Додаємо сторінку про автора</h2>
+    <h2>Як додати layout</h2>
+  </section>
+
+  <section>
+    <p>- Додати файл layout.tsx, поруч зі сторінкою, яку ви бажаєте огорнути</p>
+  </section>
+  <section>
+    - У файлі layout.tsx cтворити компонент, який приймає в якості props children та відмалювати
+    переданий children
+  </section>
+  <section>- Зробити дефолтний експорт створеного компоненту</section>
+
+  <section>
+    <h3>Layout VS Template</h3>
+    <p>Layout зберігає стейт та не перерендерюється під час зміни сторінки</p>
   </section>
 </section>
 
 <section>
   <section>
-    <h2>Додаємо сторінку для статті з парамс</h2>
+    <h2>Навіщо потрібні файли loading.tsx та error.tsx</h2>
+  </section>
+
+  <section>
+    <p>Loading.tsx - показується коли ваша сторінка генерується та завантажується</p>
+  </section>
+
+  <section>
+    <p>
+      Error.tsx
+    </p>
   </section>
 </section>
