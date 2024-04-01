@@ -46,6 +46,11 @@
       "name": "nextjs-project-struct",
       "title": "Структура React проекту за 10 хвилин",
       "points": ["Навіщо нам структура", "Принципи організації"]
+    },
+    {
+      "name": "nextjs-server-api",
+      "title": "API на Next.JS",
+      "points": ["Навіщо нам API", "Раутинг з API", "Params", "Тіло запита", "Відповідь"]
     }
   ]
 }
