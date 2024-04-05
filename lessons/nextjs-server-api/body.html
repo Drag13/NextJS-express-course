@@ -1,7 +1,19 @@
-
 <section>
   <section>
     <h2>Навіщо нам API</h2>
+  </section>
+
+  <section>
+    <p>Оновлення даних з клієнту за допомогою асинхронних запитів</p>
+  </section>
+
+  <section>
+    <h3>При цьому</h3>
+    <ul>
+      <li class="fragment fade-up">Та сама мова</li>
+      <li class="fragment fade-up">Ті самі валідації</li>
+      <li class="fragment fade-up">Той самий репозиторій</li>
+    </ul>
   </section>
 </section>
 
@@ -9,22 +21,141 @@
   <section>
     <h2>Раутинг з API</h2>
   </section>
-</section>
 
-<section>
   <section>
-    <h2>Params</h2>
+    <h3>Принципи ті самі</h3>
+    <ul>
+      <li class="fragment fade-up">Грунтується на файловій системі</li>
+      <li class="fragment fade-up">Ті самі конвенції окрім назви файлу</li>
+      <li class="fragment fade-up">Файл називається route.ts</li>
+      <li class="fragment fade-up">Експортує згідно з типом методу - GET, POST, PUT, DELETE</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Застереження</h3>
+
+    <p>
+      Файл `route.ts` не може знаходитися поруч з page.ts задля уникнення двозначності в побудові
+      роутингу
+    </p>
   </section>
 </section>
 
 <section>
   <section>
-    <h2>Тіло запита</h2>
+    <h2>Простий приклад</h2>
+    <pre><code class="language-tsx" data-line-numbers="1|2">export function GET() {
+  return Response.json({greetings: 'Hello world'});
+}
+    </code></pre>
+  </section>
+
+  <section>
+    <h3>Підтримуються</h3>
+    <ul>
+      <li>GET</li>
+      <li>POST</li>
+      <li>PUT</li>
+      <li>PATCH</li>
+      <li>DELETE</li>
+      <li>HEAD</li>
+      <li>OPTIONS</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Важливо!</h3>
+    <p>Функція має називатися з великої літери - GET, POST, PUT та інші</p>
+  </section>
+  <section>
+    <h3>Важливо!</h3>
+    <p>
+      Результати обрахування GET хендлерів, які не використовують параметри, заголовки та інші
+      моменти кешуються за замовчуванням
+    </p>
   </section>
 </section>
 
 <section>
   <section>
-    <h2>Відповідь</h2>
+    <h2>Params та запит</h2>
+
+    <p>/user/[userId]</p>
+    <pre><code class="language-tsx" data-line-numbers="1|2">export function GET(_, { params }) {
+  const userId = params.userId;
+  return Response.json(null);
+}
+    </code></pre>
+  </section>
+
+  <section>
+    <h3>Query</h3>
+    <p>/user?lang=ua</p>
+    <pre><code class="language-tsx" data-line-numbers="1|2|3">export async function GET(req: NextRequest) {
+  const search = req.nextUrl.searchParams;
+  const lang = search.get('lang')
+  return Response.json({});
+}
+    </code></pre>
+  </section>
+
+  <section>
+    <h3>Тіло запиту</h3>
+    <pre><code class="language-tsx" data-line-numbers="1|2|3">export async function GET(req: NextRequest) {
+  const body = await req.json();
+  const { userName } = body; 
+  return Response.json({greetings: `hello ${userName}`});
+}
+        </code></pre>
+  </section>
+</section>
+
+<section>
+  <section>
+    <h2>Відповідь та її варіанти</h2>
+
+    <section>
+      <h2>Відповідь</h2>
+      <pre><code class="language-tsx" data-line-numbers="2">export async function GET() {
+  return Response.json({ hello: 'world' });
+}
+      </code></pre>
+    </section>
+
+    <section>
+      <h3>Статус код</h3>
+      <pre><code class="language-tsx" data-line-numbers="2">export async function GET() {
+        return Response.json(null, { status: 400 });
+      }
+      </code></pre>
+    </section>
+
+    <section>
+      <h3>Перенаправлення</h3>
+      <pre><code class="language-tsx" data-line-numbers="2">export async function GET() {
+  return Response.redirect('/another/url');
+}</code></pre>
+    </section>
+  </section>
+</section>
+
+<section>
+  <section>
+    <h2>Важливі нюанси</h2>
+  </section>
+
+  <section>
+    <p>
+      Не варто звертатися до API роутів з-під серверних компонентів, це займає додатковий час.
+      Замість цього просто виконайте код який повертає вам дані
+    </p>
+  </section>
+
+  <section>
+    <p>
+      Результати обчислень GET обробників, що не мають параметрів та не використовують кукі або
+      хедери - кешуються, не дивуйтесь "застарілим даним"
+    </p>
   </section>
 </section>
