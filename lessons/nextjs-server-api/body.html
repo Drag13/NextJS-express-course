@@ -45,7 +45,7 @@
 <section>
   <section>
     <h2>Простий приклад</h2>
-    <pre><code class="language-tsx" data-line-numbers="1|2">export function GET() {
+    <pre><code class="language-tsx" data-line-numbers="">export function GET() {
   return Response.json({greetings: 'Hello world'});
 }
     </code></pre>
@@ -67,13 +67,6 @@
   <section>
     <h3>Важливо!</h3>
     <p>Функція має називатися з великої літери - GET, POST, PUT та інші</p>
-  </section>
-  <section>
-    <h3>Важливо!</h3>
-    <p>
-      Результати обрахування GET хендлерів, які не використовують параметри, заголовки та інші
-      моменти кешуються за замовчуванням
-    </p>
   </section>
 </section>
 
@@ -109,34 +102,54 @@
 }
         </code></pre>
   </section>
+
+  <section>
+    <h3>Кукі та загловки</h3>
+    <pre><code class="language-tsx" data-line-numbers="1|4|5">import { cookies } from 'next/headers';
+
+export async function GET(req: NextRequest) {
+  const auth = cookies().get('auth');
+  const userAgent = req.headers.get('user-agent');
+}
+        </code></pre>
+  </section>
 </section>
 
 <section>
   <section>
     <h2>Відповідь та її варіанти</h2>
+  </section>
 
-    <section>
-      <h2>Відповідь</h2>
-      <pre><code class="language-tsx" data-line-numbers="2">export async function GET() {
+  <section>
+    <h2>JSON</h2>
+    <pre><code class="language-tsx" data-line-numbers="2">export async function GET() {
   return Response.json({ hello: 'world' });
 }
       </code></pre>
-    </section>
+  </section>
 
-    <section>
-      <h3>Статус код</h3>
-      <pre><code class="language-tsx" data-line-numbers="2">export async function GET() {
-        return Response.json(null, { status: 400 });
-      }
+  <section>
+    <h2>Текст</h2>
+    <pre><code class="language-tsx" data-line-numbers="2">export async function GET() {
+  return Response.json('hello world');
+}
       </code></pre>
-    </section>
+  </section>
 
-    <section>
-      <h3>Перенаправлення</h3>
-      <pre><code class="language-tsx" data-line-numbers="2">export async function GET() {
-  return Response.redirect('/another/url');
+  <section>
+    <h3>Статус код</h3>
+    <pre><code class="language-tsx" data-line-numbers="3">export async function GET() {
+  const headers = { hello: 'world' };
+  return Response.json(null, { status: 400, { headers } });
+}
+      </code></pre>
+  </section>
+
+  <section>
+    <h3>Перенаправлення</h3>
+    <pre><code class="language-tsx" data-line-numbers="2">export async function GET() {
+  return Response.redirect('https://another/url.com');
 }</code></pre>
-    </section>
   </section>
 </section>
 
@@ -156,6 +169,13 @@
     <p>
       Результати обчислень GET обробників, що не мають параметрів та не використовують кукі або
       хедери - кешуються, не дивуйтесь "застарілим даним"
+    </p>
+  </section>
+
+  <section>
+    <p>
+      Назви методів мають бути обов'язково великими літерами - GET, POST, DELETE інакше Next.JS не
+      зможе їх знайти
     </p>
   </section>
 </section>
