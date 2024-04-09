@@ -45,7 +45,7 @@
 <section>
   <section>
     <h2>Простий приклад</h2>
-    <pre><code class="language-tsx" data-line-numbers="1-3|1|2">export function GET() {
+    <pre><code class="language-tsx" data-line-numbers="">export function GET() {
   return Response.json({greetings: 'Hello world'});
 }
     </code></pre>
@@ -105,11 +105,11 @@
 
   <section>
     <h3>Кукі та загловки</h3>
-    import { cookies } from 'next/headers';
-    <pre><code class="language-tsx" data-line-numbers="1|2|3">import { cookies } from 'next/headers';
+    <pre><code class="language-tsx" data-line-numbers="1|4|5">import { cookies } from 'next/headers';
+
 export async function GET(req: NextRequest) {
-const auth = cookies().get('auth');
-const userAgent = req.headers.get('user-agent');
+  const auth = cookies().get('auth');
+  const userAgent = req.headers.get('user-agent');
 }
         </code></pre>
   </section>
@@ -118,37 +118,38 @@ const userAgent = req.headers.get('user-agent');
 <section>
   <section>
     <h2>Відповідь та її варіанти</h2>
+  </section>
 
-    <section>
-      <h2>JSON</h2>
-      <pre><code class="language-tsx" data-line-numbers="2">export async function GET() {
+  <section>
+    <h2>JSON</h2>
+    <pre><code class="language-tsx" data-line-numbers="2">export async function GET() {
   return Response.json({ hello: 'world' });
 }
       </code></pre>
-    </section>
+  </section>
 
-    <section>
-      <h2>Текст</h2>
-      <pre><code class="language-tsx" data-line-numbers="2">export async function GET() {
+  <section>
+    <h2>Текст</h2>
+    <pre><code class="language-tsx" data-line-numbers="2">export async function GET() {
   return Response.json('hello world');
 }
       </code></pre>
-    </section>
+  </section>
 
-    <section>
-      <h3>Статус код</h3>
-      <pre><code class="language-tsx" data-line-numbers="2">export async function GET() {
-        return Response.json(null, { status: 400, { headers: { hello: 'world' } } });
-      }
+  <section>
+    <h3>Статус код</h3>
+    <pre><code class="language-tsx" data-line-numbers="3">export async function GET() {
+  const headers = { hello: 'world' };
+  return Response.json(null, { status: 400, { headers } });
+}
       </code></pre>
-    </section>
+  </section>
 
-    <section>
-      <h3>Перенаправлення</h3>
-      <pre><code class="language-tsx" data-line-numbers="2">export async function GET() {
+  <section>
+    <h3>Перенаправлення</h3>
+    <pre><code class="language-tsx" data-line-numbers="2">export async function GET() {
   return Response.redirect('https://another/url.com');
 }</code></pre>
-    </section>
   </section>
 </section>
 
